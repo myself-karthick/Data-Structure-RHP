@@ -15,7 +15,16 @@ class HashNode
 };
 class DeleteNode: public HashNode
 {
-
+    private:
+        static Deletenode *entry;
+        DeleteNode():HashNode(-1,-1){}
+    public:
+        static DeleteNode *getNode()
+        {
+            if(entry==NULL)
+                entry = new DeleteNode();
+            return entry;
+        }
 }
 int main()
 {
