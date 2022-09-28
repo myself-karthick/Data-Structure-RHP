@@ -26,6 +26,41 @@ class DeleteNode: public HashNode
             return entry;
         }
 }
+class Hashmap
+{
+    private:
+        Hashmap **htable;
+    public:
+        Hashmap()
+        {
+            htable = new HashNode* [TABLE_SIZE];
+            for(int i=0; i<TABLE_SIZE; i++)
+            {
+                htable[i]=NULL;
+            }
+        }
+        ~Hashmap()
+        {
+            for(int i=0; i<TABLE_SIZE; i++)
+            {
+                if(htable[i]!=NULL && htable[i]!=DeleteNode:getNode)
+                {
+                    delete htable[i];
+                }
+            }
+            delete[] htable;
+        }
+        int HashFunc(int key)
+        {
+            return key % TABLE_SIZE;
+        }
+        void insert(int key, int value)
+        {
+            int hash_val = HashFunc(key);
+            int init = -1;
+            int delete
+        }
+}
 int main()
 {
 
