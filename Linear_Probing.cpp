@@ -58,7 +58,26 @@ class Hashmap
         {
             int hash_val = HashFunc(key);
             int init = -1;
-            int delete
+            int deletedindex =-1;
+            while(hash_val!=init &&(htable[hash_val]==DeleteNode:getNode()) || htable[hash_val]!=NULL && htable[hash_val]->key != key)
+            {
+                if(init==-1)
+                    init = hash_val;
+                if(htable[hash_val] = =DeleteNode::getNode())
+                    deletedindex=hash_val;
+                hash_val=HashFunc(hash_val+1);
+            }
+            if(htable[hash_val]==NULL || hash_val==init)
+            {
+                if(deletedindex!=-1)
+                {
+                    htable[deletedindex] = new HashNode(key,value);
+                }
+                else 
+                {
+                    htable[hash_val] = new HashNode(key, value);
+                }
+            }
         }
 }
 int main()
