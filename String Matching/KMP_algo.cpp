@@ -1,70 +1,58 @@
-// KMP (Knuth Morris Pratt) Pattern Searching
-#include<iostream>
+#include <iostream>
 #include <bits/stdc++.h>
+#include <string.h>
 using namespace std;
-
-void computeLPSArray(char *pat, int M, int *lps)
+void computeLps(string pat, int M, int *lps)
 {
-    int i=0, len=0;
-    lps[i++]=0;
-    while(i<M)
+    int i = 0, len = 0;
+    lps[i++] = len;
+    while (i < M)
     {
-        if(pat[i]==pat[len])
+        if (pat[i] == pat[len])
         {
             len++;
-            lps[i++]=len;
+            lps[i++] = len;
         }
         else
         {
-            if(len==0)
-            {
-                lps[i++]=len;
-            }
-            else    
-                len=lps[len-1];
+            if (len == 0)
+                lps[i++] = len;
+            else
+                len = lps[len - 1];
         }
     }
-    for(int i=0; i<M; i++)
-    {
-        cout<<lps[i]<<" ";
-    }
-    cout<<endl;
 }
-
-// Prints occurrences of txt[] in pat[]
-void KMPSearch(char *pat, char *txt)
+void KMP(string text, string pat)
 {
-    int lentext=strlen(txt);
-    int lenpat=strlen(pat);
-    int i=0, j=0, lps[lenpat];
-    computeLPSArray(pat, lenpat, lps);
-    while((lentext-i)>= (lenpat-j))
+    int lentext = text.length();
+    int lenpat = pat.length();
+    int i = 0, j = 0, lps[lenpat];
+    computeLps(pat, lenpat, lps);
+    while ((lentext - i) >= (lenpat - j))
     {
-        if(txt[i]==pat[j])
+        if (text[i] == pat[j])
         {
             i++;
             j++;
         }
-        if(j==lenpat)
+        if (j == lenpat)
         {
-            cout<<"Pattern found at "<<i-j<<endl;
-            j=lps[j-1];
+            printf("Found pattern at index %d", i - j);
+            j = lps[j - 1];
         }
-        else if(i<lentext && txt[i]!=pat[j])
+        else if (i < lentext && text[i] != pat[j])
         {
-            if(j==0)
+            if (j == 0)
                 i++;
-            else    
-                j=lps[j-1];
+            else
+                j = lps[j - 1];
         }
     }
-
 }
-
 int main()
 {
-    char txt[] = "ABABDABACDABABCABAB";
-    char pat[] = "ABABCABAB";
-    KMPSearch(pat, txt);
-    return 0;
+    string text, pat;
+    getline(cin, text);
+    getline(cin, pat);
+    KMP(text, pat);
 }
