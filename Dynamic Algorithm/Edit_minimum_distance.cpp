@@ -8,11 +8,11 @@ int main()
     int arr1[26]={0}, arr2[26]={0};
     for(int i=0; S1[i]; i++)
     {
-        arr1[S1[i]-97];
+        arr1[S1[i]-97]++;
     }
     for(int i=0; S2[i]; i++)
     {
-        arr2[S2[i]-97];
+        arr2[S2[i]-97]++;
     }
     for(int i=0; i<26; i++)
     {
