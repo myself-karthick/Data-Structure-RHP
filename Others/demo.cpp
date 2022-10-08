@@ -19,13 +19,21 @@ int main()
         {
             if(row!=N)
                 mat[row++][col]=S[i++];
+            else
+            {
+                row--;
+                col++;
+                f=2;
+            }
         }
         else if(row>=0 && f==2)
         {
-            if(i==N)
-            row--;
-            col++;
-            mat[row--][col];
+            mat[row--][col]=S[i++];
+            if(row==-1)
+            {
+                col++;
+                f=1;
+            }
         }
     }
     for (int i = 0; i < N; i++)
