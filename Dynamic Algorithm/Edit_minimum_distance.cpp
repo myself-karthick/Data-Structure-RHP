@@ -16,8 +16,9 @@ int main()
     }
     for(int i=0; i<26; i++)
     {
-        if(arr1[i]!=0 && arr2[i]!=0)
+        if(arr1[i]!=arr2[i])
         {
+            printf("%c\n",i+97);
             c+=abs(arr1[i]-arr2[i]);
         }
     }
