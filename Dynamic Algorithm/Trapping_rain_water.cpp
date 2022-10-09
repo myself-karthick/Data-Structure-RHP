@@ -2,13 +2,13 @@
 using namespace std;
 int main()
 {
-    long long t,n,i,m,s;
+    int t,n,i,m,s;
     cin>>t;
     while(t--)
     {
        cin>>n;
        s=0;
-       long long a[n],l[n],r[n];
+       int a[n],l[n],r[n];
        for(i=0;i<n;i++)
            cin>>a[i];
         l[0]=a[0],r[n-1]=a[n-1];
