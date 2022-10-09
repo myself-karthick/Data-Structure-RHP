@@ -3,7 +3,8 @@ using namespace std;
 void stockBuyAndSell(int arr[],int n){
     int i=0;
     int c=0;
-	    while(i<n-1){
+	    while(i<n-1)
+        {
 	        
 	        while((i<n-1) && arr[i+1]<=arr[i]){
 	            i++;
@@ -18,7 +19,6 @@ void stockBuyAndSell(int arr[],int n){
 	            i++;
 	        }
 	        int maxima = i-1;
-
 	       cout<<"("<<minima <<" "<<maxima<<") ";
 	       c++;
 	       
