@@ -1,0 +1,24 @@
+#include<iostream>
+#include <bits/stdc++.h>
+#include<string.h>
+using namespace std;
+
+int findMinInsertions(char str[], int l, int h)
+{
+    if (l > h)
+        return INT_MAX;
+    if (l == h)
+        return 0;
+    if (l == h - 1)
+        return (str[l] == str[h]) ? 0 : 1;
+
+    return (str[l] == str[h]) ? findMinInsertions(str, l + 1, h - 1) : (min(findMinInsertions(str, l, h - 1), findMinInsertions(str, l + 1, h)) + 1);
+}
+
+int main()
+{
+    char str[1001];
+    cin>>str;
+    cout << findMinInsertions(str, 0, strlen(str) - 1);
+    return 0;
+}
