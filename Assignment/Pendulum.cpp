@@ -3,6 +3,7 @@
 using namespace std;
 int main()
 {
+    cout<<"Enter the size and elements:";
     int N;
     cin>>N;
     int arr[N], pendulam[N], index=N-1, penLeft=0, penRight=N-1;
@@ -18,6 +19,7 @@ int main()
         if(index>=0)
             pendulam[penLeft++]=arr[index--];
     }
+    cout<<"Pendulam pattern :\n";
     for(int i=0; i<N; i++)
     {
         cout<<pendulam[i]<<" ";

@@ -3,6 +3,7 @@
 using namespace std;
 int main()
 {
+    cout<<"Enter number of people with apples: "<<endl;
     int N, avg, sum=0, count=0;
     cin>>N;
     int arr[N];
@@ -30,5 +31,5 @@ int main()
             }
         }
     }
-    cout<<"No. of operations: "<<count;
+    cout<<"\nNo. of operations to have equal apples: "<<count;
 }

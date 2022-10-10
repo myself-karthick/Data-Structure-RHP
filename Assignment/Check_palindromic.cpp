@@ -17,8 +17,10 @@ int findMinInsertions(char str[], int l, int h)
 
 int main()
 {
+    cout<<"Enter the string: ";
     char str[1001];
     cin>>str;
+    cout<<"\nThe no. of operations required to make it palindrome: ";
     cout << findMinInsertions(str, 0, strlen(str) - 1);
     return 0;
 }

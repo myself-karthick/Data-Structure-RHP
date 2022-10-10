@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    cout<<"Enter the string: ";
     string s;
     cin >> s;
     int c[26] = {0}, max = 0;
@@ -12,6 +13,7 @@ int main()
     {
         c[s[i] - 'a']++;
     }
+    cout<<"Words that are difficult learn: "<<endl;
     for (int i = 25; i >= 0; i--)
     {
         if (c[i] > max)
