@@ -19,8 +19,10 @@ void Comb(char *input, int index, char *output, int outLen)
 
 int main()
 {
+    cout<<"Enter the String: ";
     cin>>input;
     output[0] = '\0';
+    cout<<"\nCities that can be visited are:"<<endl;
     Comb(input, 0, output, 0);
     return 0;
 }
