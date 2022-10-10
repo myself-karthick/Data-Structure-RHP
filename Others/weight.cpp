@@ -7,7 +7,6 @@ int main()
     int sum=0, t;
     for(int i=0; s[i]; i++)
     {
-
         t=(tolower(s[i])-96);
         cout<<s[i]<<" "<<(t*(t+1)/2)<<endl;
         
