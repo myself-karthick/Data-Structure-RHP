@@ -8,7 +8,6 @@ void search(string text, string pattern)
     int l = concat.length();
     int Z[l];
     getZarr(concat, Z);
-    //hello
     for (int i = 0; i < l; ++i)
     {
         if (Z[i] == pattern.length())
