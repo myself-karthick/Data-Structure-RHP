@@ -11,5 +11,5 @@ int main()
         if(i>0 && arr[0]>arr[i])
             count++;
     }
-
+    cout<<arr[i];
 }
